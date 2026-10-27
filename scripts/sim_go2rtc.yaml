@@ -1,0 +1,4 @@
+# Test pattern streams for the simulated camera (its GetStreamUri answers rtsp://127.0.0.1:8554/main and /sub).
+streams:
+  main: exec:ffmpeg -hide_banner -re -f lavfi -i testsrc2=size=1280x720:rate=15 -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -pix_fmt yuv420p -f rtsp {output}
+  sub: exec:ffmpeg -hide_banner -re -f lavfi -i testsrc2=size=640x360:rate=15 -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -pix_fmt yuv420p -f rtsp {output}

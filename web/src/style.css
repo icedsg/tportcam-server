@@ -1,0 +1,28 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #0d1117; color: #e6edf3; font: 14px/1.4 system-ui, sans-serif; }
+button, select { background: #21262d; color: inherit; border: 1px solid #30363d; border-radius: 6px; padding: 4px 10px; cursor: pointer; font: inherit; }
+button.on { background: #1f6feb; border-color: #1f6feb; }
+header { display: flex; align-items: center; gap: 12px; padding: 10px 14px; }
+header h1 { font-size: 16px; margin: 0; flex: 1; }
+nav { display: flex; gap: 6px; }
+.cols { display: flex; align-items: center; gap: 6px; padding: 0 14px 8px; color: #8b949e; }
+.grid { display: grid; gap: 6px; padding: 0 6px 6px; }
+.tile { position: relative; background: #000; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; cursor: pointer; }
+video { width: 100%; height: 100%; object-fit: contain; display: block; }
+.label { position: absolute; left: 8px; bottom: 6px; font-size: 12px; text-shadow: 0 1px 2px #000; }
+.state { position: absolute; right: 8px; top: 6px; font-size: 11px; color: #f0883e; }
+.full { position: fixed; inset: 0; z-index: 10; background: #000; cursor: pointer; }
+.note { padding: 20px 14px; color: #8b949e; }
+.list { width: calc(100% - 28px); margin: 0 14px; border-collapse: collapse; }
+.list th, .list td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #21262d; vertical-align: middle; }
+.list img { width: 96px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; background: #000; display: block; }
+.rtsp { font-size: 11px; color: #8b949e; margin-top: 4px; }
+.err { color: #f0883e; }
+.settings { display: flex; flex-direction: column; gap: 14px; padding: 20px 14px; max-width: 480px; }
+.settings label { display: flex; align-items: center; gap: 10px; }
+.dim { color: #8b949e; margin: 0; }
+input { background: #0d1117; color: inherit; border: 1px solid #30363d; border-radius: 6px; padding: 4px 8px; font: inherit; }
+.cloud { padding: 0 14px 20px; max-width: 900px; }
+.cloud h2 { font-size: 15px; margin: 6px 0; }
+.cloudrow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #21262d; }
+.cloudrow b { min-width: 120px; }

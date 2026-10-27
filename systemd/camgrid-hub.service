@@ -1,0 +1,24 @@
+[Unit]
+Description=camgrid hub (ONVIF discovery, go2rtc re-stream, web grid on 8780)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=camgrid
+Group=camgrid
+EnvironmentFile=/etc/camgrid/hub.env
+Environment=GO2RTC_BIN=/usr/local/bin/go2rtc
+WorkingDirectory=/var/lib/camgrid
+# Cameras are found once at start; a restart (systemctl restart camgrid-hub) picks up new ones.
+ExecStart=/opt/camgrid_hub/venv/bin/camgrid_hub serve --data /var/lib/camgrid --name "${CAMGRID_NAME}" --timeout 5
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/camgrid
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

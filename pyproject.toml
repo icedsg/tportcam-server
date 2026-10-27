@@ -1,0 +1,28 @@
+[project]
+name = "tportcam-server"
+version = "0.1.0"
+description = "Finds ONVIF cameras on the LAN, re-streams them to a web grid and optionally sends them to tport.stream"
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["httpx>=0.27", "fastapi>=0.115", "uvicorn>=0.30", "zeroconf>=0.132"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+tportcam-server = "camgrid_hub.cli:main"
+camgrid_hub = "camgrid_hub.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["camgrid_hub"]
+
+[tool.setuptools.package-data]
+camgrid_hub = ["web/index.html", "web/assets/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
